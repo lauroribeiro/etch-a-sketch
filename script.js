@@ -10,7 +10,7 @@ for(let i = 0; i < 16; i++){
 gridItens.forEach((gridItem) => {
     gridItem.className = "grid-item";
     gridItem.addEventListener("mouseover", 
-        (e) => e.target.style.backgroundColor = "pink");
+        (e) => e.target.classList.add("paint"));
     gridContainer.appendChild(gridItem);
 });
 

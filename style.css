@@ -1,6 +1,26 @@
+.body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .grid-container{
     display: grid;
     grid-template-columns: repeat(16, auto);
+    width: 500px;
+    height: 500px;
+    margin: auto;
+}
+.resize-grid{
+    text-align: center;
+    margin: 50px 0px 30px 0px;
+}
+.resize-grid input{
+    text-align: center;
+    width: 50px;
+    margin-right: 20px;
+}
+.resize-btn{
+    
 }
 .grid-item{
     background-color:gray;
