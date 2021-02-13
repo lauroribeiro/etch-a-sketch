@@ -9,8 +9,14 @@ for(let i = 0; i < 16; i++){
 }
 gridItens.forEach((gridItem) => {
     gridItem.className = "grid-item";
-    gridItem.addEventListener("mouseover", 
-        (e) => e.target.classList.add("paint"));
+    gridItem.addEventListener("mouseover", randomColor);
     gridContainer.appendChild(gridItem);
 });
 
+function randomColor(e){
+    let a = Math.ceil(Math.random() * 255);
+    let b = Math.ceil(Math.random() * 255);
+    let c = Math.ceil(Math.random() * 255);
+    e.target.style.backgroundColor = `rgb(${a},${b},${c})`;
+    return;
+}
