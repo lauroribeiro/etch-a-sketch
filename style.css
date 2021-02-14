@@ -5,9 +5,8 @@
 }
 .grid-container{
     display: grid;
-    grid-template-columns: repeat(16, auto);
-    width: 500px;
-    height: 500px;
+    width: 600px !important;
+    height: 600px !important;
     margin: auto;
 }
 .resize-grid{
@@ -20,7 +19,7 @@
     margin-right: 20px;
 }
 .resize-btn{
-    
+
 }
 .grid-item{
     background-color:gray;
