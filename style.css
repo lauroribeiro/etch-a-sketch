@@ -5,8 +5,8 @@
 }
 .grid-container{
     display: grid;
-    width: 600px !important;
-    height: 600px !important;
+    width: 700px;
+    height: 700px;
     margin: auto;
 }
 .resize-grid{
@@ -22,10 +22,8 @@
 
 }
 .grid-item{
-    background-color:gray;
-    text-align: center;
-    border: 1px solid black;
-    padding: 10px;
+    background-color:rgb(250, 250, 250);
+    border: thin solid rgba(0, 0, 0, 0.1);
 }
 .paint{
     background-color: pink;
