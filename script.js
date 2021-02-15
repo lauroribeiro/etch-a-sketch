@@ -4,12 +4,12 @@ const resizeButton = document.querySelector("#resize-btn");
 const GRID_SIZE = 700;
 const GRID_BACKGROUND_COLOR = "rgb(240, 244, 248)";
 const inputSize = document.querySelector("#size");
-const radioButtons = document.querySelectorAll(".colorfull-mode");
-let colorfullMode = false;
+const radioButtons = document.querySelectorAll(".colorful-mode");
+let colorfulMode = false;
 let gridItens = [];
 
 radioButtons.forEach((btn) => {
-    btn.addEventListener("change", changeColorfullMode);
+    btn.addEventListener("change", changeColorfulMode);
 });
 
 clearButton.addEventListener("click", clearSkecth);
@@ -27,8 +27,8 @@ function clearSkecth(){
     });
 }
 
-function changeColorfullMode(e){
-    colorfullMode = parseInt(e.target.value) ? true : false;
+function changeColorfulMode(e){
+    colorfulMode = parseInt(e.target.value) ? true : false;
 }
 
 function createGrid(size = 64){
@@ -45,7 +45,7 @@ function createGrid(size = 64){
         gridItem.className = "grid-item";
         gridItem.setAttribute("data-count", "0");
         gridItem.addEventListener("mouseover", (e) => {
-            if(colorfullMode) return randomColor(e);
+            if(colorfulMode) return randomColor(e);
             e.target.style.backgroundColor = "rgb(34, 34, 34)";
         });
         gridContainer.appendChild(gridItem);
