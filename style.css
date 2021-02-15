@@ -23,7 +23,7 @@
 }
 #resize-btn, #clear-btn{
     background-color: rgb(0, 116, 217);
-    border: 1px solid black;
+    border: 1px solid rgb(124, 123, 123);
     color: white;
     padding: 5px 10px;
     text-align: center;

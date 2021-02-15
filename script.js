@@ -9,7 +9,7 @@ let colorfullMode = false;
 let gridItens = [];
 
 radioButtons.forEach((btn) => {
-    btn.addEventListener("change", setColorfullMode);
+    btn.addEventListener("change", changeColorfullMode);
 });
 
 clearButton.addEventListener("click", clearSkecth);
@@ -26,12 +26,8 @@ function clearSkecth(){
     });
 }
 
-function setColorfullMode(e){
-    if(parseInt(e.target.value)){
-        colorfullMode = true;
-    }else{
-        colorfullMode = false;
-    }
+function changeColorfullMode(e){
+    colorfullMode = parseInt(e.target.value) ? true : false;
 }
 
 function createGrid(size = 64){
@@ -71,7 +67,6 @@ function randomColor(e){
     let b = Math.ceil(Math.random() * 255);
     let c = Math.ceil(Math.random() * 255);
     e.target.style.backgroundColor = `rgb(${a},${b},${c})`;
-    return;
 }
 
 createGrid();
