@@ -23,9 +23,9 @@
 }
 #resize-btn, #clear-btn{
     background-color: rgb(0, 116, 217);
-    border: none;
+    border: 1px solid black;
     color: white;
-    padding: 10px 25px;
+    padding: 5px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -39,16 +39,14 @@
     background-color: rgb(240, 244, 248);
     border: thin solid rgba(156, 155, 155, 0.1);
 }
-.paint{
-    background-color: pink;
-}
-
 input#on, input#off{
     outline: none;
     margin: 0 -15px 0 -10px;
     vertical-align: middle;
 }
-
 #radio-text{
     margin-left: 10px;
+}
+.color-div{
+    margin-top: 25px;
 }
