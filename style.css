@@ -44,6 +44,7 @@
 }
 
 input#on, input#off{
+    outline: none;
     margin: 0 -15px 0 -10px;
     vertical-align: middle;
 }

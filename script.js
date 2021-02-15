@@ -4,7 +4,13 @@ const resizeButton = document.querySelector("#resize-btn");
 const GRID_SIZE = 700;
 const GRID_BACKGROUND_COLOR = "rgb(240, 244, 248)";
 const inputSize = document.querySelector("#size");
+const radioButtons = document.querySelectorAll(".colorfull-mode");
+let colorfullMode = false;
 let gridItens = [];
+
+radioButtons.forEach((btn) => {
+    btn.addEventListener("change", setColorfullMode);
+});
 
 clearButton.addEventListener("click", clearSkecth);
 
@@ -20,6 +26,14 @@ function clearSkecth(){
     });
 }
 
+function setColorfullMode(e){
+    if(parseInt(e.target.value)){
+        colorfullMode = true;
+    }else{
+        colorfullMode = false;
+    }
+}
+
 function createGrid(size = 64){
     let gridItemSize = GRID_SIZE/size;
     gridContainer.style["grid-template-columns"]=`repeat(${size}, ${gridItemSize}px)`;
@@ -32,7 +46,10 @@ function createGrid(size = 64){
     }
     gridItens.forEach((gridItem) => {
         gridItem.className = "grid-item";
-        gridItem.addEventListener("mouseover", randomColor);
+        gridItem.addEventListener("mouseover", (e) => {
+            if(colorfullMode) return randomColor(e);
+            e.target.style.backgroundColor = "rgb(34, 34, 34)";
+        });
         gridContainer.appendChild(gridItem);
     });
 }
