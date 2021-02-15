@@ -23,6 +23,7 @@ resizeButton.addEventListener("click", () => {
 function clearSkecth(){
     gridItens.forEach((gridItem) => {
         gridItem.style.backgroundColor = GRID_BACKGROUND_COLOR;
+        gridItem.style.filter = null;
     });
 }
 
@@ -42,6 +43,7 @@ function createGrid(size = 64){
     }
     gridItens.forEach((gridItem) => {
         gridItem.className = "grid-item";
+        gridItem.setAttribute("data-count", "0");
         gridItem.addEventListener("mouseover", (e) => {
             if(colorfullMode) return randomColor(e);
             e.target.style.backgroundColor = "rgb(34, 34, 34)";
@@ -62,11 +64,19 @@ function resizeGrid(size){
     createGrid(size);
 }
 
-function randomColor(e){
-    let a = Math.ceil(Math.random() * 255);
-    let b = Math.ceil(Math.random() * 255);
-    let c = Math.ceil(Math.random() * 255);
-    e.target.style.backgroundColor = `rgb(${a},${b},${c})`;
+function randomColor(e){ 
+    /*If there is no color, colour it. If not dim it.*/
+    let counter = parseInt(e.target.getAttribute("data-count"));
+    if(!counter){
+        let a = Math.ceil(Math.random() * 255);
+        let b = Math.ceil(Math.random() * 255);
+        let c = Math.ceil(Math.random() * 255);
+        e.target.style.backgroundColor = `rgb(${a},${b},${c})`;
+    }else{
+        e.target.style.filter = `brightness(${100 - (counter * 10)}%)`;
+    }
+    counter++;
+    e.target.setAttribute("data-count", `${counter}`);
 }
 
 createGrid();
