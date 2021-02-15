@@ -7,10 +7,10 @@
     <title>Etch-a-Sketch</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body style="background-color: aliceblue;">
     <div class="resize-grid">
         <label for="size">Resize the grid: </label>
-        <input name="size" type="number">
+        <input id="size" value="64" min="1" max="100" type="number">
         <button id="resize-btn">Resize</button>
         <button id="clear-btn">Clear</button>
     </div>

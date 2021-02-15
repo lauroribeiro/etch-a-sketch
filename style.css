@@ -13,17 +13,31 @@
     text-align: center;
     margin: 50px 0px 30px 0px;
 }
+.resize-grid label {
+    font-size: 16px;
+}
 .resize-grid input{
     text-align: center;
     width: 50px;
     margin-right: 20px;
 }
-.resize-btn{
-
+#resize-btn, #clear-btn{
+    background-color: rgb(0, 116, 217);
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+#clear-btn{
+    background-color: rgb(90, 98, 104);
 }
 .grid-item{
-    background-color:rgb(250, 250, 250);
-    border: thin solid rgba(0, 0, 0, 0.1);
+    background-color: rgb(240, 244, 248);
+    border: thin solid rgba(156, 155, 155, 0.1);
 }
 .paint{
     background-color: pink;
