@@ -10,9 +10,7 @@ clearButton.addEventListener("click", clearSkecth);
 
 resizeButton.addEventListener("click", () => {
     let size = parseInt(inputSize.value);
-    if(size < 1 || size > 100){
-        return;
-    }
+    if(size < 1 || size > 100) return;
     resizeGrid(size);
 });
 
@@ -46,7 +44,7 @@ function resetGrid(){
     }
 }
 
-function resizeGrid(size = 64){
+function resizeGrid(size){
     resetGrid();
     createGrid(size);
 }
